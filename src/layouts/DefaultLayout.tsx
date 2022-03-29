@@ -4,11 +4,11 @@ import Head from 'next/head';
 import Navbar from '@components/ui/Navbar';
 import styles from '@styles/layouts/DefaultLayout.module.scss';
 
-interface NextPageProps {
+interface NextPagePropTypes {
   title?: string;
 }
 
-const DefaultLayout: NextPage<NextPageProps> = ({ children, title }) => {
+const DefaultLayout: NextPage<NextPagePropTypes> = ({ children, title }) => {
   return (
     <>
       <Head>

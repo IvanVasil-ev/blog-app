@@ -2,18 +2,19 @@
 @use '../utils';
 
 .container {
-  background-color: theme.$dark_blue;
+  background-color: theme.$dark-blue;
   height: utils.$navbar-height;
   width: 100%;
   padding: 0 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   box-shadow: 0 0 4px 4px rgba(55, 65, 80, 0.5);
   position: sticky;
 }
 
 .logo {
-  flex: 1;
+  cursor: pointer;
 }
 
 .controllers {

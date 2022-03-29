@@ -1,0 +1,54 @@
+@use '../theme';
+
+.button {
+  background: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 3px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.contained {
+  background-color: theme.$orange;
+
+  &:hover {
+    background-color: theme.$orange-hover;
+  }
+
+  &:active {
+    background-color: theme.$orange;
+    box-shadow: 0 0 2px 1.5px rgba(55, 65, 80, 0.5) inset;
+  }
+}
+
+.outlined {
+  border: 2px solid theme.$orange;
+  color: theme.$orange;
+
+  &:hover {
+    border: 2px solid theme.$orange-hover;
+    background-color: theme.$orange-hover;
+    color: white;
+  }
+
+  &:active {
+    border: 2px solid rgba(55, 65, 80, 0.5);
+    background-color: theme.$orange;
+    box-shadow: 0 0 2px 1.5px rgba(55, 65, 80, 0.5) inset;
+    color: white;
+  }
+}
+
+.default {
+  color: theme.$dark-blue;
+
+  &:hover {
+    color: #000;
+  }
+
+  &:active {
+    color: theme.$dark-blue;
+  }
+}

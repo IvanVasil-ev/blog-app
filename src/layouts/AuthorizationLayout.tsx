@@ -1,18 +1,20 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-interface NextPageProps {
+import styles from '@styles/layouts/AuthorizationLayout.module.scss';
+
+interface NextPagePropTypes {
   title: string;
 }
 
-const AuthorizationLayout: NextPage<NextPageProps> = ({ children, title }) => {
+const AuthorizationLayout: NextPage<NextPagePropTypes> = ({ children, title }) => {
   return (
     <>
       <Head>
         <title>{title ? `${title} | BlogApp` : 'BlogApp'}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {children}
+      <div className={styles.container}>{children}</div>
     </>
   );
 };

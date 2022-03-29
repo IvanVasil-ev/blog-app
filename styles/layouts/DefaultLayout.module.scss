@@ -1,6 +1,6 @@
 @use '../utils';
 
 .container {
-  padding: 15px;
+  padding: 0 25px;
   min-height: calc(100vh - utils.$navbar-height);
 }

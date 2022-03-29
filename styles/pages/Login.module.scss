@@ -1,0 +1,43 @@
+@use '../theme';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 1px rgba(55, 65, 80, 0.1);
+  margin: 20px 0;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+.authButton {
+  background-color: theme.$dark-blue;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 11px 10px;
+
+  &:hover {
+    color: #ffffff;
+    background-color: theme.$blue;
+  }
+
+  &:active {
+    color: #ffffff;
+    background-color: theme.$dark-blue;
+    box-shadow: 0 0 5px 3px rgba(116, 137, 168, 0.5) inset;
+  }
+}
+
+.goHomeButton {
+  margin-left: 40px;
+  font-size: 17px;
+}
