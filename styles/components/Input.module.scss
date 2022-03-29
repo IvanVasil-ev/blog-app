@@ -1,0 +1,53 @@
+@use '../theme';
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 6px;
+  font-size: 19px;
+}
+
+.input {
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid theme.$dark-grey;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+.inputError {
+  animation: shake 0.25s ease-in-out 0s 2;
+}
+
+.errorWrapper {
+  height: 13px;
+  padding-left: 7px;
+}
+
+.error {
+  font-size: 13px;
+  color: theme.$red;
+  transition: 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+  25% {
+    margin-left: 0.3rem;
+    margin-right: -0.3rem;
+  }
+  75% {
+    margin-left: -0.3rem;
+    margin-right: 0.3rem;
+  }
+  100% {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+}

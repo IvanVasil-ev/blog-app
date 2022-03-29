@@ -45,7 +45,8 @@
   color: theme.$dark-blue;
 
   &:hover {
-    color: #000;
+    color: theme.$black;
+    text-decoration: underline;
   }
 
   &:active {
