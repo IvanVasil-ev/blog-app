@@ -25,6 +25,7 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@domain/*": ["src/domain/*"],
+      "@svg/*": ["public/svg/*"],
       "@styles/*": ["styles/*"],
       "@pages/*": ["pages/*"],
       "@types/*": ["types/*"]

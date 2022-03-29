@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import Navbar from '@components/ui/Navbar';
+import styles from '@styles/layouts/DefaultLayout.module.scss';
 
 interface NextPageProps {
   title?: string;
@@ -15,7 +16,7 @@ const DefaultLayout: NextPage<NextPageProps> = ({ children, title }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      {children}
+      <div className={styles.container}>{children}</div>
     </>
   );
 };
