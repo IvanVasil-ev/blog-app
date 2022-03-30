@@ -8,7 +8,7 @@ import styles from '@styles/pages/Login.module.scss';
 
 const LoginPage = () => {
   const router = useRouter();
-  const [login, setLogin] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   return (
@@ -20,11 +20,11 @@ const LoginPage = () => {
         <span className={styles.title}>Login</span>
         <div className={styles.divider} />
         <Input
-          value={login}
-          onChange={(e) => setLogin(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           wrapperStyles={styles.input}
           type="email"
-          label="Username"
+          label="Email"
         />
         <Input
           value={password}

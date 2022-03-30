@@ -9,6 +9,8 @@ interface InputPropTypes {
   error?: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: () => void;
+  onFocus?: () => void;
   placeholder?: string;
   customStyles?: string;
   wrapperStyles?: string;
@@ -20,7 +22,9 @@ const Input = ({
   label,
   type = 'text',
   placeholder = '',
-  onChange = () => false,
+  onChange,
+  onBlur = () => false,
+  onFocus = () => false,
   customStyles,
   wrapperStyles,
 }: InputPropTypes) => {
@@ -28,10 +32,12 @@ const Input = ({
     <div className={cx(styles.container, wrapperStyles)}>
       {label && <span className={styles.label}>{label}</span>}
       <input
-        className={cx(styles.input, customStyles)}
+        className={cx(styles.input, customStyles, error && styles.inputError)}
         type={type}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
         placeholder={placeholder}
       />
       <div className={styles.errorWrapper}>
