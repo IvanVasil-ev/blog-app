@@ -22,6 +22,7 @@
     "target": "es2018",
     "baseUrl": ".",
     "paths": {
+      "@constants": ["src/configuration/constants.ts"],
       "@config": ["src/configuration/index.ts"],
       "@components/*": ["src/components/*"],
       "@models": ["src/models/index.ts"],
