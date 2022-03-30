@@ -1,9 +1,28 @@
 import { Component } from 'react';
+import { useRouter } from 'next/router';
 
 import DefaultLayout from '@layouts/DefaultLayout';
+import Button from '@components/common/Button';
+import Divider from '@components/common/Divider';
+import styles from '@styles/pages/Profile.module.scss';
 
 const ProfilePage = () => {
-  return <>ProfilePage</>;
+  const router = useRouter();
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.leftSide}>
+        <div className={styles.avatar} />
+        <Button mode="contained" onClick={() => router.push('/settings')}>
+          Settings
+        </Button>
+      </div>
+      <div className={styles.rightSide}>
+        <span className={styles.username}>Ivan Vasilev</span>
+        <Divider customStyles={styles.divider} />
+      </div>
+    </div>
+  );
 };
 
 ProfilePage.getLayout = (page: Component) => <DefaultLayout title="Profile">{page}</DefaultLayout>;
