@@ -4,7 +4,7 @@ import cx from 'clsx';
 import styles from '@styles/components/Button.module.scss';
 
 interface ButtonPropTypes {
-  customStyles?: any;
+  customStyles?: string;
   children: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   mode?: 'contained' | 'outlined';

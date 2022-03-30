@@ -10,8 +10,8 @@ interface InputPropTypes {
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
-  customStyles?: any;
-  wrapperStyles?: any;
+  customStyles?: string;
+  wrapperStyles?: string;
 }
 
 const Input = ({

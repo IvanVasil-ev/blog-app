@@ -8,8 +8,8 @@
     "url": "https://github.com/IvanVasil-ev"
   },
   "engines": {
-    "node": ">14.17.4",
-    "yarn": ">1.22.11"
+    "node": ">=14.17.4",
+    "yarn": ">=1.22.11"
   },
   "scripts": {
     "dev": "next dev",

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Component, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import AuthorizationLayout from '@layouts/AuthorizationLayout';
@@ -45,7 +45,7 @@ const LoginPage = () => {
   );
 };
 
-LoginPage.getLayout = (page: any) => (
+LoginPage.getLayout = (page: Component) => (
   <AuthorizationLayout title="Login">{page}</AuthorizationLayout>
 );
 
