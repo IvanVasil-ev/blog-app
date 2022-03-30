@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import { Component, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import AuthorizationLayout from '@layouts/AuthorizationLayout';
@@ -11,6 +11,13 @@ const SignUpPage = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (isLoading) {
+      setTimeout(() => setIsLoading(false), 3000);
+    }
+  }, [isLoading]);
 
   const onEmailBlur = () => {
     if (!EMAIL_REGEXP.test(email)) {
@@ -40,7 +47,13 @@ const SignUpPage = () => {
           type="email"
           label="Email"
         />
-        <Button mode="contained" customStyles={styles.authButton} onClick={() => router.push('/')}>
+        <Button
+          mode="contained"
+          customStyles={styles.authButton}
+          // onClick={() => router.push('/')}
+          onClick={() => setIsLoading(true)}
+          isLoading={isLoading}
+        >
           Send email →
         </Button>
       </div>

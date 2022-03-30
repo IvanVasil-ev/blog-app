@@ -1,5 +1,3 @@
-import * as React from "react";
-
 const DropdownArrowIcon = ({
   width = 15,
   height = 15,

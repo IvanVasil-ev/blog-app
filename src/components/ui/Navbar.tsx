@@ -8,7 +8,7 @@ import styles from '@styles/components/Navbar.module.scss';
 
 const Navbar = () => {
   const router = useRouter();
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   const navbarPages = [
     {
