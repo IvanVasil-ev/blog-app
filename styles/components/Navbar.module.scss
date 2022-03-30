@@ -17,6 +17,17 @@
   cursor: pointer;
 }
 
+.avatar {
+  height: 100%;
+  width: 35px;
+  border-radius: 50%;
+  background-color: theme.$light-blue;
+}
+
+.dropdownTitle {
+  margin: 0 10px;
+}
+
 .controllers {
   display: flex;
   justify-content: space-evenly;
