@@ -6,6 +6,13 @@ body {
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: theme.$grey;
   color: theme.$dark-blue;
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
