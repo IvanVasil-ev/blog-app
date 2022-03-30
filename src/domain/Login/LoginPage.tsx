@@ -2,8 +2,9 @@ import { Component, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import AuthorizationLayout from '@layouts/AuthorizationLayout';
-import Input from '@components/common/Input';
+import Divider from '@components/common/Divider';
 import Button from '@components/common/Button';
+import Input from '@components/common/Input';
 import styles from '@styles/pages/Login.module.scss';
 
 const LoginPage = () => {
@@ -18,7 +19,7 @@ const LoginPage = () => {
       </Button>
       <div className={styles.container}>
         <span className={styles.title}>Login</span>
-        <div className={styles.divider} />
+        <Divider />
         <Input
           value={email}
           onChange={(e) => setEmail(e.target.value)}

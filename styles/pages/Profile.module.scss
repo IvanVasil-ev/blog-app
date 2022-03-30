@@ -1,0 +1,40 @@
+@use '../theme';
+
+.container {
+  margin-top: 20px;
+  width: 60%;
+  background-color: theme.$white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 1px rgba(55, 65, 80, 0.1);
+  display: flex;
+}
+
+.avatar {
+  height: 150px;
+  width: 150px;
+  background-color: theme.$dark-grey;
+  margin-bottom: 20px;
+}
+
+.divider {
+  margin: 10px 0;
+}
+
+.leftSide,
+.rightSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftSide {
+  margin-right: 40px;
+}
+
+.rightSide {
+  flex: 1;
+}
+
+.username {
+  font-size: 24px;
+}
