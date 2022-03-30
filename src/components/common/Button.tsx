@@ -5,7 +5,7 @@ import styles from '@styles/components/Button.module.scss';
 
 interface ButtonPropTypes {
   customStyles?: string;
-  children: string;
+  children: string | JSX.Element;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   mode?: 'contained' | 'outlined';
 }

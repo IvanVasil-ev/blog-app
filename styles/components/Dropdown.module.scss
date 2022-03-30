@@ -1,0 +1,71 @@
+@use '../theme';
+@use '../utils';
+
+.container {
+  color: theme.$white;
+  height: utils.$profile-dropdown-height;
+  display: flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 5px;
+  user-select: none;
+  text-decoration: none;
+
+  &:hover {
+    color: theme.$white;
+    background-color: theme.$blue;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: theme.$white;
+    background-color: theme.$light-blue;
+    text-decoration: none;
+  }
+}
+
+.drop {
+  flex-direction: column;
+  position: absolute;
+  display: flex;
+  margin-top: 3px;
+  width: 100%;
+  max-width: 150px;
+  background-color: theme.$white;
+  box-shadow: 0 0 3px 1px rgba(55, 65, 80, 0.2);
+  border-radius: 5px;
+  animation: display 0.3s ease-in-out 0s;
+}
+
+.dropButton {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: theme.$dark-blue;
+    background-color: theme.$dark-grey;
+  }
+
+  &:active {
+    text-decoration: none;
+    color: theme.$dark-blue;
+    background-color: theme.$grey;
+  }
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes display {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
