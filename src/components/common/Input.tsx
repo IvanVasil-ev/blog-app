@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import cx from 'clsx';
 
 import styles from '@styles/components/Input.module.scss';
@@ -14,6 +14,7 @@ interface InputPropTypes {
   onFocus?: () => void;
   placeholder?: string;
   isDisabled?: boolean;
+  isRequired?: boolean;
   customStyles?: string;
   wrapperStyles?: string;
 }
@@ -29,25 +30,48 @@ const Input = ({
   onBlur = () => false,
   onFocus = () => false,
   isDisabled,
+  isRequired,
   customStyles,
   wrapperStyles,
 }: InputPropTypes) => {
+  const [requiredError, setRequiredError] = useState('');
+
+  const onSelfBlur = () => {
+    if (isRequired && !value) {
+      return setRequiredError('Заполните поле.');
+    }
+    return onBlur();
+  };
+
+  const onSelfFocus = () => {
+    setRequiredError('');
+    onFocus();
+  };
+
   return (
     <div className={cx(styles.container, wrapperStyles)}>
-      {label && <span className={styles.label}>{label}</span>}
+      {label && (
+        <span className={styles.label}>
+          {label}
+          {isRequired && <span className={styles.required}>*</span>}
+        </span>
+      )}
       <input
-        className={cx(styles.input, customStyles, error && styles.inputError)}
+        className={cx(styles.input, customStyles, (error || requiredError) && styles.inputError)}
         type={type}
         value={value}
         onChange={onChange}
-        onBlur={onBlur}
-        onFocus={onFocus}
+        onBlur={() => onSelfBlur()}
+        onFocus={onSelfFocus}
         disabled={isDisabled}
         placeholder={placeholder}
       />
       <div className={styles.infoWrapper}>
-        {!error && description && <span className={styles.description}>{description}</span>}
-        {error && <span className={styles.error}>{error}</span>}
+        {!requiredError && !error && description && (
+          <span className={styles.description}>{description}</span>
+        )}
+        {!requiredError && error && <span className={styles.error}>{error}</span>}
+        {requiredError && <span className={styles.error}>{requiredError}</span>}
       </div>
     </div>
   );
