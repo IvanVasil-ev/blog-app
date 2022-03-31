@@ -13,13 +13,22 @@ const ForgotPasswordPage = () => {
   const [emailError, setEmailError] = useState('');
 
   const onEmailBlur = () => {
-    if (!EMAIL_REGEXP.test(email)) {
-      setEmailError('Введите email.');
+    if (email && !EMAIL_REGEXP.test(email)) {
+      setEmailError('Некорректный email.');
     }
   };
 
   const onEmailFocus = () => {
     setEmailError('');
+  };
+
+  const isEmailValid = () => {
+    if (!email) {
+      setEmailError('Введите email.');
+    }
+    if (email && !emailError) {
+      setStep(2);
+    }
   };
 
   return (
@@ -29,11 +38,10 @@ const ForgotPasswordPage = () => {
           router={router}
           email={email}
           setEmail={setEmail}
-          setStep={setStep}
           emailError={emailError}
           onEmailBlur={onEmailBlur}
           onEmailFocus={onEmailFocus}
-          setEmailError={setEmailError}
+          isEmailValid={isEmailValid}
         />
       ) : (
         <RecoveryMessage router={router} email={email} />

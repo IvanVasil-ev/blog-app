@@ -22,7 +22,7 @@ const RecoveryPasswordPage = () => {
   }, []);
 
   const onPasswordBlur = () => {
-    if (!PASSWORD_REGEXP.test(password)) {
+    if (password && !PASSWORD_REGEXP.test(password)) {
       setPasswordError('Некоректный пароль.');
     }
   };

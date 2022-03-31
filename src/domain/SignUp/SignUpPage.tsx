@@ -1,20 +1,19 @@
 import { Component, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import AuthorizationLayout from '@layouts/AuthorizationLayout';
-import Divider from '@components/common/Divider';
-import Button from '@components/common/Button';
-import Input from '@components/common/Input';
 import { EMAIL_REGEXP } from '@constants';
-import styles from '@styles/pages/SignUp.module.scss';
+import AuthorizationLayout from '@layouts/AuthorizationLayout';
+import SignUpForm from '@domain/SignUp/SignUpSteps/SignUpForm';
+import SignUpMessage from '@domain/SignUp/SignUpSteps/SignUpMessage';
 
 const SignUpPage = () => {
   const router = useRouter();
+  const [step, setStep] = useState(1);
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
   const onEmailBlur = () => {
-    if (!EMAIL_REGEXP.test(email)) {
+    if (email && !EMAIL_REGEXP.test(email)) {
       setEmailError('Некорректный email.');
     }
   };
@@ -28,37 +27,25 @@ const SignUpPage = () => {
       setEmailError('Введите email.');
     }
     if (email && !emailError) {
-      router.push('/');
+      setStep(2);
     }
   };
 
   return (
     <div>
-      <Button customStyles={styles.goHomeButton} onClick={() => router.push('/')}>
-        ← Back to home
-      </Button>
-      <div className={styles.container}>
-        <span className={styles.title}>Sign up</span>
-        <Divider />
-        <Input
-          value={email}
-          error={emailError}
-          onChange={(e) => setEmail(e.target.value)}
-          onBlur={onEmailBlur}
-          onFocus={onEmailFocus}
-          wrapperStyles={styles.input}
-          type="email"
-          label="Email"
-          placeholder="john.doe@example.com"
+      {step === 1 ? (
+        <SignUpForm
+          router={router}
+          email={email}
+          setEmail={setEmail}
+          emailError={emailError}
+          onEmailBlur={onEmailBlur}
+          onEmailFocus={onEmailFocus}
+          isEmailValid={isEmailValid}
         />
-        <Button mode="contained" customStyles={styles.authButton} onClick={isEmailValid}>
-          Send email →
-        </Button>
-      </div>
-      <div className={styles.footer}>
-        <Button onClick={() => router.push('/login')}>Already have account? Log in!</Button>
-        <Button onClick={() => router.push('/forgot-password')}>Forgot password?</Button>
-      </div>
+      ) : (
+        <SignUpMessage router={router} email={email} />
+      )}
     </div>
   );
 };

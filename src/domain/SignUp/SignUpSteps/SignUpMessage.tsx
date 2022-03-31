@@ -3,20 +3,20 @@ import cx from 'clsx';
 
 import Button from '@components/common/Button';
 import Divider from '@components/common/Divider';
-import styles from '@styles/pages/ForgotPassword.module.scss';
+import styles from '@styles/pages/SignUp.module.scss';
 
-interface RecoveryMessagePropTypes {
+interface SignUpPropTypes {
   router: NextRouter;
   email: string;
 }
 
-const RecoveryMessage = ({ router, email }: RecoveryMessagePropTypes) => {
+const SignUpMessage = ({ router, email }: SignUpPropTypes) => {
   return (
-    <div className={cx(styles.container, styles.recoveryMessageContainer)}>
-      <span className={styles.title}>Recovery Password</span>
+    <div className={cx(styles.container, styles.signUpMessageContainer)}>
+      <span className={styles.title}>Sign up</span>
       <Divider />
-      <div className={styles.recoveryMessageText}>
-        <span>We have sent a password recovery link to your email,</span>
+      <div className={styles.signUpMessageText}>
+        <span>We have sent a registration link to your email,</span>
         <span>{email}</span>
         <span>Please check your email.</span>
       </div>
@@ -27,4 +27,4 @@ const RecoveryMessage = ({ router, email }: RecoveryMessagePropTypes) => {
   );
 };
 
-export default RecoveryMessage;
+export default SignUpMessage;
