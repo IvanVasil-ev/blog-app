@@ -15,12 +15,21 @@ const SignUpPage = () => {
 
   const onEmailBlur = () => {
     if (!EMAIL_REGEXP.test(email)) {
-      setEmailError('Введите email.');
+      setEmailError('Некорректный email.');
     }
   };
 
   const onEmailFocus = () => {
     setEmailError('');
+  };
+
+  const isEmailValid = () => {
+    if (!email) {
+      setEmailError('Введите email.');
+    }
+    if (email && !emailError) {
+      router.push('/');
+    }
   };
 
   return (
@@ -40,8 +49,9 @@ const SignUpPage = () => {
           wrapperStyles={styles.input}
           type="email"
           label="Email"
+          placeholder="john.doe@example.com"
         />
-        <Button mode="contained" customStyles={styles.authButton} onClick={() => router.push('/')}>
+        <Button mode="contained" customStyles={styles.authButton} onClick={isEmailValid}>
           Send email →
         </Button>
       </div>

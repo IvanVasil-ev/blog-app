@@ -2,34 +2,42 @@ import { Component, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import AuthorizationLayout from '@layouts/AuthorizationLayout';
-import Divider from '@components/common/Divider';
-import Button from '@components/common/Button';
-import Input from '@components/common/Input';
-import styles from '@styles/pages/ForgotPassword.module.scss';
+import ForgotPasswordForm from '@domain/ForgotPassword/Steps/ForgotPasswordForm';
+import RecoveryMessage from '@domain/ForgotPassword/Steps/RecoveryMessage';
+import { EMAIL_REGEXP } from '@constants';
 
 const ForgotPasswordPage = () => {
   const router = useRouter();
+  const [step, setStep] = useState(1);
   const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
+
+  const onEmailBlur = () => {
+    if (!EMAIL_REGEXP.test(email)) {
+      setEmailError('Введите email.');
+    }
+  };
+
+  const onEmailFocus = () => {
+    setEmailError('');
+  };
 
   return (
     <div>
-      <Button customStyles={styles.goHomeButton} onClick={() => router.push('/')}>
-        ← Back to home
-      </Button>
-      <div className={styles.container}>
-        <span className={styles.title}>Forgot Password</span>
-        <Divider />
-        <Input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          wrapperStyles={styles.input}
-          type="email"
-          label="Email"
+      {step === 1 ? (
+        <ForgotPasswordForm
+          router={router}
+          email={email}
+          setEmail={setEmail}
+          setStep={setStep}
+          emailError={emailError}
+          onEmailBlur={onEmailBlur}
+          onEmailFocus={onEmailFocus}
+          setEmailError={setEmailError}
         />
-        <Button mode="contained" customStyles={styles.authButton} onClick={() => router.push('/')}>
-          Send recovery link →
-        </Button>
-      </div>
+      ) : (
+        <RecoveryMessage router={router} email={email} />
+      )}
     </div>
   );
 };

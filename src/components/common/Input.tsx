@@ -8,7 +8,8 @@ interface InputPropTypes {
   label?: string;
   error?: string;
   value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  description?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: () => void;
   onFocus?: () => void;
   placeholder?: string;
@@ -20,6 +21,7 @@ interface InputPropTypes {
 const Input = ({
   value,
   error = '',
+  description = '',
   label,
   type = 'text',
   placeholder = '',
@@ -43,7 +45,8 @@ const Input = ({
         disabled={isDisabled}
         placeholder={placeholder}
       />
-      <div className={styles.errorWrapper}>
+      <div className={styles.infoWrapper}>
+        {!error && description && <span className={styles.description}>{description}</span>}
         {error && <span className={styles.error}>{error}</span>}
       </div>
     </div>

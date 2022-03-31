@@ -13,7 +13,7 @@
 .input {
   height: 40px;
   border-radius: 5px;
-  border: 1px solid theme.$dark-grey;
+  border: 1px solid theme.$grey;
   font-size: 15px;
   padding: 0 10px;
 }
@@ -27,9 +27,15 @@
   }
 }
 
-.errorWrapper {
+.infoWrapper {
   height: 13px;
   padding-left: 7px;
+}
+
+.description {
+  font-size: 13px;
+  color: theme.$dark-grey;
+  transition: 0.3s;
 }
 
 .error {

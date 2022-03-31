@@ -10,7 +10,25 @@ import styles from '@styles/pages/Login.module.scss';
 const LoginPage = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
+  const onEmailFocus = () => setEmailError('');
+
+  const onPasswordFocus = () => setPasswordError('');
+
+  const isCredentialsValid = () => {
+    if (!email) {
+      setEmailError('Введите email.');
+    }
+    if (!password) {
+      setPasswordError('Введите пароль.');
+    }
+    if (email && password) {
+      router.push('/');
+    }
+  };
 
   return (
     <div>
@@ -26,6 +44,9 @@ const LoginPage = () => {
           wrapperStyles={styles.input}
           type="email"
           label="Email"
+          error={emailError}
+          onFocus={onEmailFocus}
+          placeholder="john.doe@example.com"
         />
         <Input
           value={password}
@@ -33,8 +54,10 @@ const LoginPage = () => {
           wrapperStyles={styles.input}
           type="password"
           label="Password"
+          error={passwordError}
+          onFocus={onPasswordFocus}
         />
-        <Button mode="contained" customStyles={styles.authButton} onClick={() => router.push('/')}>
+        <Button mode="contained" customStyles={styles.authButton} onClick={isCredentialsValid}>
           Login →
         </Button>
       </div>
