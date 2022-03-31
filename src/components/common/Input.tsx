@@ -8,10 +8,12 @@ interface InputPropTypes {
   label?: string;
   error?: string;
   value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  description?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onBlur?: () => void;
   onFocus?: () => void;
   placeholder?: string;
+  isDisabled?: boolean;
   customStyles?: string;
   wrapperStyles?: string;
 }
@@ -19,12 +21,14 @@ interface InputPropTypes {
 const Input = ({
   value,
   error = '',
+  description = '',
   label,
   type = 'text',
   placeholder = '',
   onChange,
   onBlur = () => false,
   onFocus = () => false,
+  isDisabled,
   customStyles,
   wrapperStyles,
 }: InputPropTypes) => {
@@ -38,9 +42,11 @@ const Input = ({
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
+        disabled={isDisabled}
         placeholder={placeholder}
       />
-      <div className={styles.errorWrapper}>
+      <div className={styles.infoWrapper}>
+        {!error && description && <span className={styles.description}>{description}</span>}
         {error && <span className={styles.error}>{error}</span>}
       </div>
     </div>

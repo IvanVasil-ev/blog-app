@@ -43,13 +43,13 @@
   &:hover {
     text-decoration: none;
     color: theme.$dark-blue;
-    background-color: theme.$dark-grey;
+    background-color: theme.$grey;
   }
 
   &:active {
     text-decoration: none;
     color: theme.$dark-blue;
-    background-color: theme.$grey;
+    background-color: theme.$light-grey;
   }
 }
 
