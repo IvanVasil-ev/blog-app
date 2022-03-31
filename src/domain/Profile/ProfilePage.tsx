@@ -20,6 +20,14 @@ const ProfilePage = () => {
       <div className={styles.rightSide}>
         <span className={styles.username}>Ivan Vasilev</span>
         <Divider customStyles={styles.divider} />
+        <div className={styles.infoWrapper}>
+          <span className={styles.infoQuestion}>Age:</span>
+          <span className={styles.infoAnswer}>21</span>
+        </div>
+        <div className={styles.infoWrapper}>
+          <span className={styles.infoQuestion}>Profession:</span>
+          <span className={styles.infoAnswer}>Fronted Developer</span>
+        </div>
       </div>
     </div>
   );
