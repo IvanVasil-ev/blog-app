@@ -1,3 +1,3 @@
-import ForgotPasswordPage from '@domain/ForgotPassword/ForgotPassword';
+import ForgotPasswordPage from '@domain/ForgotPassword/ForgotPasswordPage';
 
 export default ForgotPasswordPage;

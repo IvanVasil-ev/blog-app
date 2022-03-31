@@ -12,6 +12,7 @@ interface InputPropTypes {
   onBlur?: () => void;
   onFocus?: () => void;
   placeholder?: string;
+  isDisabled?: boolean;
   customStyles?: string;
   wrapperStyles?: string;
 }
@@ -25,6 +26,7 @@ const Input = ({
   onChange,
   onBlur = () => false,
   onFocus = () => false,
+  isDisabled,
   customStyles,
   wrapperStyles,
 }: InputPropTypes) => {
@@ -38,6 +40,7 @@ const Input = ({
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
+        disabled={isDisabled}
         placeholder={placeholder}
       />
       <div className={styles.errorWrapper}>

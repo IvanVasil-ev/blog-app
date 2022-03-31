@@ -9,6 +9,7 @@ interface ButtonPropTypes {
   loaderStyles?: string;
   children: string | JSX.Element;
   isLoading?: boolean;
+  isDisabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   mode?: 'contained' | 'outlined';
 }
@@ -18,6 +19,7 @@ const Button = ({
   customStyles,
   loaderStyles,
   isLoading,
+  isDisabled,
   mode,
   onClick = () => false,
 }: ButtonPropTypes) => {
@@ -39,6 +41,7 @@ const Button = ({
   ) : (
     <button
       type="button"
+      disabled={isDisabled}
       className={cx(styles.button, buttonStyle(), customStyles)}
       onClick={onClick}
     >
