@@ -15,6 +15,7 @@ interface InputPropTypes {
   placeholder?: string;
   isDisabled?: boolean;
   isRequired?: boolean;
+  labelStyles?: string;
   customStyles?: string;
   wrapperStyles?: string;
 }
@@ -31,6 +32,7 @@ const Input = ({
   onFocus = () => false,
   isDisabled,
   isRequired,
+  labelStyles,
   customStyles,
   wrapperStyles,
 }: InputPropTypes) => {
@@ -51,7 +53,7 @@ const Input = ({
   return (
     <div className={cx(styles.container, wrapperStyles)}>
       {label && (
-        <span className={styles.label}>
+        <span className={cx(styles.label, labelStyles)}>
           {label}
           {isRequired && <span className={styles.required}>*</span>}
         </span>

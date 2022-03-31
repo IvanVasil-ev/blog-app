@@ -3,6 +3,7 @@
 .container {
   margin-top: 20px;
   width: 60%;
+  min-width: 650px;
   background-color: theme.$white;
   padding: 30px;
   border-radius: 10px;
@@ -37,4 +38,18 @@
 
 .username {
   font-size: 24px;
+}
+
+.infoWrapper {
+  margin: 5px 0 5px 5px;
+}
+
+.infoQuestion {
+  font-size: 18px;
+}
+
+.infoAnswer {
+  font-size: 15px;
+  color: theme.$dark-grey;
+  margin-left: 10px;
 }
