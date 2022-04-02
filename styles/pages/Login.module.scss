@@ -1,16 +1,5 @@
 @use '../theme';
 
-.container {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 40px;
-  background-color: theme.$white;
-  height: 400px;
-  width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 0 3px 1px rgba(55, 65, 80, 0.1);
-}
-
 .title {
   font-size: 30px;
   font-weight: bold;
@@ -27,7 +16,7 @@
   color: theme.$white;
   border-radius: 8px;
   padding: 11px 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 
   &:hover {
     color: theme.$white;

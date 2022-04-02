@@ -1,5 +1,4 @@
 import { NextRouter } from 'next/router';
-import cx from 'clsx';
 
 import Button from '@components/common/Button';
 import Divider from '@components/common/Divider';
@@ -12,7 +11,7 @@ interface SignUpPropTypes {
 
 const SignUpMessage = ({ router, email }: SignUpPropTypes) => {
   return (
-    <div className={cx(styles.container, styles.signUpMessageContainer)}>
+    <div className="card">
       <span className={styles.title}>Sign up</span>
       <Divider />
       <div className={styles.signUpMessageText}>

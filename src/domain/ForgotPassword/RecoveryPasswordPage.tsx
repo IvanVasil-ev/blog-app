@@ -1,6 +1,5 @@
 import { Component, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import cx from 'clsx';
 
 import { PASSWORD_REGEXP } from '@constants';
 import AuthorizationLayout from '@layouts/AuthorizationLayout';
@@ -54,7 +53,7 @@ const RecoveryPasswordPage = () => {
       <Button customStyles={styles.goHomeButton} onClick={() => router.push('/')}>
         ← Back to home
       </Button>
-      <div className={cx(styles.container, styles.recoveryPasswordContainer)}>
+      <div className="card">
         <span className={styles.title}>Recovery Password</span>
         <Divider />
         <Input

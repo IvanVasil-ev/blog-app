@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import cx from 'clsx';
 
 import DefaultLayout from '@layouts/DefaultLayout';
 import Card from '@domain/Home/Card';
@@ -12,12 +13,12 @@ const HomePage = () => {
   ];
 
   return (
-    <>
-      <div className={styles.header}>Welcome to home page</div>
+    <div className="container">
+      <div className={cx('card', styles.header)}>Welcome to home page</div>
       {data.map(({ title }) => (
         <Card key={title} title={title} />
       ))}
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,4 @@
 import { NextRouter } from 'next/router';
-import cx from 'clsx';
 
 import Button from '@components/common/Button';
 import Divider from '@components/common/Divider';
@@ -12,7 +11,7 @@ interface RecoveryMessagePropTypes {
 
 const RecoveryMessage = ({ router, email }: RecoveryMessagePropTypes) => {
   return (
-    <div className={cx(styles.container, styles.recoveryMessageContainer)}>
+    <div className="card">
       <span className={styles.title}>Recovery Password</span>
       <Divider />
       <div className={styles.recoveryMessageText}>

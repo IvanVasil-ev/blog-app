@@ -1,5 +1,4 @@
 import { NextRouter } from 'next/router';
-import cx from 'clsx';
 
 import Button from '@components/common/Button';
 import Divider from '@components/common/Divider';
@@ -48,7 +47,7 @@ const AccountInformationForm = ({
       <Button customStyles={styles.goHomeButton} onClick={() => router.push('/')}>
         ← Back to home
       </Button>
-      <div className={cx(styles.container, styles.accountInformationContainer)}>
+      <div className="card">
         <span className={styles.title}>Account information</span>
         <Divider />
         <Input

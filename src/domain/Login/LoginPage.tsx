@@ -1,6 +1,7 @@
 import { Component, useState } from 'react';
 import { useRouter } from 'next/router';
 
+import { EMAIL_REGEXP } from '@constants';
 import AuthorizationLayout from '@layouts/AuthorizationLayout';
 import Divider from '@components/common/Divider';
 import Button from '@components/common/Button';
@@ -13,6 +14,12 @@ const LoginPage = () => {
   const [emailError, setEmailError] = useState('');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
+
+  const onEmailBlur = () => {
+    if (email && !EMAIL_REGEXP.test(email)) {
+      setEmailError('Некорректный email.');
+    }
+  };
 
   const onEmailFocus = () => setEmailError('');
 
@@ -35,7 +42,7 @@ const LoginPage = () => {
       <Button customStyles={styles.goHomeButton} onClick={() => router.push('/')}>
         ← Back to home
       </Button>
-      <div className={styles.container}>
+      <div className="card">
         <span className={styles.title}>Login</span>
         <Divider />
         <Input
@@ -46,6 +53,7 @@ const LoginPage = () => {
           label="Email"
           error={emailError}
           onFocus={onEmailFocus}
+          onBlur={onEmailBlur}
           placeholder="john.doe@example.com"
         />
         <Input

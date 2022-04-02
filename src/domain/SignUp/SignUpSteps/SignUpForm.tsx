@@ -29,7 +29,7 @@ const SignUpForm = ({
       <Button customStyles={styles.goHomeButton} onClick={() => router.push('/')}>
         ← Back to home
       </Button>
-      <div className={styles.container}>
+      <div className="card">
         <span className={styles.title}>Sign up</span>
         <Divider />
         <Input

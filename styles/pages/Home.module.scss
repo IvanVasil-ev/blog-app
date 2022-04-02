@@ -1,11 +1,5 @@
 @use '../theme';
 
 .header {
-  margin: 20px 0;
-  width: 60%;
-  min-width: 650px;
-  padding: 20px 40px;
-  background-color: theme.$white;
-  border-radius: 10px;
-  box-shadow: 0 0 3px 1px rgba(55, 65, 80, 0.1);
+  margin-bottom: 20px;
 }
