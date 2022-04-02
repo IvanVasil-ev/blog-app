@@ -1,30 +1,60 @@
-import { useState } from 'react';
+import { Component, useState } from 'react';
 import { useRouter } from 'next/router';
 
+import { EMAIL_REGEXP } from '@constants';
 import AuthorizationLayout from '@layouts/AuthorizationLayout';
-import Input from '@components/common/Input';
+import Divider from '@components/common/Divider';
 import Button from '@components/common/Button';
+import Input from '@components/common/Input';
 import styles from '@styles/pages/Login.module.scss';
 
 const LoginPage = () => {
   const router = useRouter();
-  const [login, setLogin] = useState('');
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
+  const onEmailBlur = () => {
+    if (email && !EMAIL_REGEXP.test(email)) {
+      setEmailError('Некорректный email.');
+    }
+  };
+
+  const onEmailFocus = () => setEmailError('');
+
+  const onPasswordFocus = () => setPasswordError('');
+
+  const isCredentialsValid = () => {
+    if (!email) {
+      setEmailError('Введите email.');
+    }
+    if (!password) {
+      setPasswordError('Введите пароль.');
+    }
+    if (email && password) {
+      router.push('/');
+    }
+  };
 
   return (
     <div>
       <Button customStyles={styles.goHomeButton} onClick={() => router.push('/')}>
         ← Back to home
       </Button>
-      <div className={styles.container}>
+      <div className="card">
         <span className={styles.title}>Login</span>
-        <div className={styles.divider} />
+        <Divider />
         <Input
-          value={login}
-          onChange={(e) => setLogin(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           wrapperStyles={styles.input}
           type="email"
-          label="Username"
+          label="Email"
+          error={emailError}
+          onFocus={onEmailFocus}
+          onBlur={onEmailBlur}
+          placeholder="john.doe@example.com"
         />
         <Input
           value={password}
@@ -32,8 +62,10 @@ const LoginPage = () => {
           wrapperStyles={styles.input}
           type="password"
           label="Password"
+          error={passwordError}
+          onFocus={onPasswordFocus}
         />
-        <Button mode="contained" customStyles={styles.authButton} onClick={() => router.push('/')}>
+        <Button mode="contained" customStyles={styles.authButton} onClick={isCredentialsValid}>
           Login →
         </Button>
       </div>
@@ -45,7 +77,7 @@ const LoginPage = () => {
   );
 };
 
-LoginPage.getLayout = (page: any) => (
+LoginPage.getLayout = (page: Component) => (
   <AuthorizationLayout title="Login">{page}</AuthorizationLayout>
 );
 

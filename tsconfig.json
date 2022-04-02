@@ -22,7 +22,10 @@
     "target": "es2018",
     "baseUrl": ".",
     "paths": {
+      "@constants": ["src/configuration/constants.ts"],
+      "@config": ["src/configuration/index.ts"],
       "@components/*": ["src/components/*"],
+      "@models": ["src/models/index.ts"],
       "@layouts/*": ["src/layouts/*"],
       "@domain/*": ["src/domain/*"],
       "@svg/*": ["public/svg/*"],
@@ -32,6 +35,6 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js"],
   "exclude": ["node_modules"]
 }
