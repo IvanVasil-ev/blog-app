@@ -4,12 +4,40 @@ html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: theme.$grey;
+  background-color: theme.$light-grey;
   color: theme.$dark-blue;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1170px;
+  width: 100%;
+  padding: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 320px;
+  padding: 30px 20px;
+  background-color: theme.$white;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 1px rgba(55, 65, 80, 0.1);
 }

@@ -1,0 +1,44 @@
+@use '../theme';
+
+.profileContainer {
+  flex-direction: row;
+}
+
+.avatar {
+  height: 200px;
+  width: 200px;
+  background-color: theme.$grey;
+  margin-bottom: 20px;
+}
+
+.leftSide,
+.rightSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftSide {
+  margin-right: 20px;
+}
+
+.rightSide {
+  flex: 1;
+}
+
+.username {
+  font-size: 19px;
+}
+
+.infoWrapper {
+  margin: 5px 0 5px 5px;
+}
+
+.infoQuestion {
+  font-size: 18px;
+}
+
+.infoAnswer {
+  font-size: 15px;
+  color: theme.$dark-grey;
+  margin-left: 10px;
+}

@@ -10,11 +10,23 @@
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 0 4px 4px rgba(55, 65, 80, 0.5);
-  position: sticky;
+  position: fixed;
+  top: 0;
 }
 
 .logo {
   cursor: pointer;
+}
+
+.avatar {
+  height: 100%;
+  width: 35px;
+  border-radius: 50%;
+  background-color: theme.$light-blue;
+}
+
+.dropdownTitle {
+  margin: 0 10px;
 }
 
 .controllers {

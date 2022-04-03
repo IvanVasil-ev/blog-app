@@ -1,0 +1,47 @@
+@use '../theme';
+
+.userInfoContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.label {
+  font-size: 16px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.saveButton {
+  background-color: theme.$dark-blue;
+  color: theme.$white;
+  border-radius: 8px;
+  padding: 11px 10px;
+
+  &:hover {
+    color: theme.$white;
+    background-color: theme.$blue;
+  }
+
+  &:active {
+    color: theme.$white;
+    background-color: theme.$dark-blue;
+    box-shadow: 0 0 5px 3px rgba(116, 137, 168, 0.5) inset;
+  }
+}
