@@ -1,0 +1,6 @@
+{
+  "base_url_regex": "[a-z0-9.:-]+",
+  "email_regex": "[A-Za-z0-9@.$!%*#?&]+",
+  "password_regex": "[A-Za-z0-9@$!%*#?&]+",
+  "api_key_regex": "[A-Za-z0-9]+"
+}

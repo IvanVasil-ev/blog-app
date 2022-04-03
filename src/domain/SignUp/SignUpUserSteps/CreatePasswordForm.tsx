@@ -36,7 +36,7 @@ const CreatePasswordForm = ({
 }: CreatePasswordFormPropTypes) => {
   return (
     <>
-      <Button customStyles={styles.goHomeButton} onClick={() => router.push('/')}>
+      <Button customStyles={styles.goHomeButton} onClick={() => router.replace('/')}>
         ← Back to home
       </Button>
       <div className="card">

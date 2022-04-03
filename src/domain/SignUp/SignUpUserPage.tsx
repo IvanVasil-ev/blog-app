@@ -45,7 +45,7 @@ const SignUpUserPage = () => {
       setConfirmPasswordError('Подтвердите пароль.');
     }
     if (PASSWORD_REGEXP.test(password) && password === confirmPassword) {
-      router.push('/');
+      router.replace('/');
     }
   };
 

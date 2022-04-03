@@ -53,14 +53,10 @@ const SettingsPage = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <span className={styles.title}>Account Information</span>
-      <div className={styles.userInfoContainer}>
-        <div className={styles.leftSide}>
-          <div className={styles.avatar} />
-          <Button mode="contained">Change avatar</Button>
-        </div>
-        <div className={styles.rightSide}>
+    <div className="container">
+      <div className="card">
+        <span className={styles.title}>Account Information</span>
+        <div className={styles.userInfoContainer}>
           <span className={styles.subtitle}>General</span>
           <Input
             labelStyles={styles.label}

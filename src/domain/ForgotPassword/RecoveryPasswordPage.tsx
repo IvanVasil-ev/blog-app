@@ -44,7 +44,7 @@ const RecoveryPasswordPage = () => {
       setConfirmPasswordError('Подтвердите новый пароль.');
     }
     if (password && confirmPassword && !passwordError && !confirmPasswordError) {
-      router.push('/');
+      router.replace('/');
     }
   };
 

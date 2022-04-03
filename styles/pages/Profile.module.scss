@@ -1,25 +1,14 @@
 @use '../theme';
 
-.container {
-  margin-top: 20px;
-  width: 60%;
-  min-width: 650px;
-  background-color: theme.$white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 3px 1px rgba(55, 65, 80, 0.1);
-  display: flex;
+.profileContainer {
+  flex-direction: row;
 }
 
 .avatar {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   background-color: theme.$grey;
   margin-bottom: 20px;
-}
-
-.divider {
-  margin: 10px 0;
 }
 
 .leftSide,
@@ -29,7 +18,7 @@
 }
 
 .leftSide {
-  margin-right: 40px;
+  margin-right: 20px;
 }
 
 .rightSide {
@@ -37,7 +26,7 @@
 }
 
 .username {
-  font-size: 24px;
+  font-size: 19px;
 }
 
 .infoWrapper {

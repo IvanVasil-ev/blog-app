@@ -33,7 +33,7 @@ const LoginPage = () => {
       setPasswordError('Введите пароль.');
     }
     if (email && password) {
-      router.push('/');
+      router.replace('/');
     }
   };
 

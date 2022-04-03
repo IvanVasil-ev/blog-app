@@ -1,0 +1,15 @@
+- request:
+    url: ^/api/signup
+    method: POST
+    query:
+      email: '[A-Za-z0-9@.$!%*#?&]+'
+    headers:
+      content-type: application/json
+      api_key: '[A-Za-z0-9]+'
+      base_url: '[a-z0-9.:-]+'
+  response:
+    - status: 200
+      latency: 1000
+      headers:
+        content-type: application/json
+      body: '<% headers.base_url %>/account-information?api_key=<% headers.api_key %>&email=<% query.email %>'
