@@ -13,7 +13,7 @@ const ProfilePage = () => {
   return (
     <div className={cx('container', styles.profileContainer)}>
       <div className={styles.leftSide}>
-        <div className="card">
+        <div className={cx('card', styles.profileCard)}>
           <div className={styles.avatar} />
           <Button mode="contained" onClick={() => router.push('/settings')}>
             Settings
