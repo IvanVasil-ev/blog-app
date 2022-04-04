@@ -27,6 +27,7 @@
       "@components/*": ["src/components/*"],
       "@models": ["src/models/index.ts"],
       "@layouts/*": ["src/layouts/*"],
+      "@utils/*": ["src/utilities/*"],
       "@domain/*": ["src/domain/*"],
       "@svg/*": ["public/svg/*"],
       "@styles/*": ["styles/*"],

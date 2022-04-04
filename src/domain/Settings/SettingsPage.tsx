@@ -83,29 +83,6 @@ const SettingsPage = () => {
             onChange={(e) => setProfession(e.target.value)}
             label="Profession"
           />
-          <Divider />
-          <span className={styles.subtitle}>Change Password</span>
-          <Input
-            type="password"
-            labelStyles={styles.label}
-            customStyles={styles.input}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            error={passwordError}
-            onBlur={onPasswordBlur}
-            onFocus={onPasswordFocus}
-            label="New password"
-          />
-          <Input
-            type="password"
-            labelStyles={styles.label}
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            error={confirmPasswordError}
-            onBlur={onConfirmPasswordBlur}
-            onFocus={onConfirmPasswordFocus}
-            label="Confirm password"
-          />
           <div className={styles.buttonWrapper}>
             <Button mode="contained" customStyles={styles.saveButton} onClick={isCredentialsValid}>
               Save Information

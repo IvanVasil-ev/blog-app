@@ -6,6 +6,9 @@ import { AuthorizationState, AuthorizationActionTypes } from './types';
 const INITIAL_STATE: AuthorizationState = {
   isLoading: false,
   errorMessage: null,
+  accountConfirmed: false,
+  token: null,
+  currentUser: null,
 };
 
 function reducer(state = INITIAL_STATE, action: AuthorizationActionTypes): AuthorizationState {

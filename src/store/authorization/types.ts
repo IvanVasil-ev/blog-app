@@ -1,9 +1,21 @@
 import { AuthorizationModels } from '@models';
 import * as actionsTypes from '../actionsList';
 
+type User = {
+  email?: string;
+  name?: string;
+  surname?: string;
+  age?: string;
+  profession?: string;
+  password?: string;
+};
+
 export type AuthorizationState = {
   isLoading: boolean;
   errorMessage: string | null;
+  accountConfirmed: boolean;
+  token: string | null;
+  currentUser: User | null;
 };
 
 export interface LoginPendingActionType {

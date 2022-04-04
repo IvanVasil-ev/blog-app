@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import { APP_NAME } from '@config';
+import { APP_NAME, BASE_URL } from '@config';
 import Navbar from '@components/ui/Navbar';
 import styles from '@styles/layouts/DefaultLayout.module.scss';
 
@@ -21,6 +21,7 @@ const DefaultLayout: NextPage<NextPagePropTypes> = ({ children, title }) => {
         />
       </Head>
       <Navbar />
+      {console.log(APP_NAME, BASE_URL)}
       <div className={styles.container}>{children}</div>
     </>
   );
